@@ -6,41 +6,16 @@
 #include <string.h>
 /**
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 int print_char(va_list l)
-=======
-int print_char(va_list f)
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
-int print_char(va_list f)
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
-int print_char(va_list f)
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 {	
-	char a;
+	char a = va_arg(l, int);
 
-	a = va_arg(l, int);
 	_putchar (a);
 	return (1);
 }
 /**
 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 int print_string(va_list l)
-=======
-int print_string(va_list s)
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
-int print_string(va_list s)
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
-int print_string(va_list s)
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 {
 	char *b = va_arg(l, char *);
 	int i = 0;
@@ -51,9 +26,6 @@ int print_string(va_list s)
 }
 /**
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 int print_mod(va_list l)
 {
 	char b = va_arg(l, int);
@@ -61,6 +33,8 @@ int print_mod(va_list l)
 	_putchar(b);
 	return (1);
 }
+/**
+ */
 int print_decimal(va_list l)
 {
 	int c = va_arg(l, int);
@@ -91,26 +65,8 @@ int print_decimal(va_list l)
 	free (aux);
 	return (strlen(aux) - 1);
 }
-int print_len(va_list l)
-{
-	int 
-=======
-=======
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-int print_mod(va_list h)
-{	
-	_putchar('%');
-	return (1);
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-=======
->>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
-}
+/**
+ */
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -124,12 +80,12 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_mod},
 		{'d', print_decimal},
-		{'p', print_len},
 		{'\0', NULL}
 
 	};
 
 	va_start (p, format);
+
 	while (format[i] != '\0' && format[i] != '\0')
 	{
 		j = 0;
