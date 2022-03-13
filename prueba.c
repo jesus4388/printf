@@ -6,7 +6,11 @@
 #include <string.h>
 /**
  */
+<<<<<<< HEAD
 int print_char(va_list l)
+=======
+int print_char(va_list f)
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 {	
 	char a;
 
@@ -16,7 +20,11 @@ int print_char(va_list l)
 }
 /**
 */
+<<<<<<< HEAD
 int print_string(va_list l)
+=======
+int print_string(va_list s)
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 {
 	char *b = va_arg(l, char *);
 	int i = 0;
@@ -27,6 +35,7 @@ int print_string(va_list l)
 }
 /**
  */
+<<<<<<< HEAD
 int print_mod(va_list l)
 {
 	char b = va_arg(l, int);
@@ -67,6 +76,12 @@ int print_decimal(va_list l)
 int print_len(va_list l)
 {
 	int 
+=======
+int print_mod(va_list h)
+{	
+	_putchar('%');
+	return (1);
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 }
 int _printf(const char *format, ...)
 {
