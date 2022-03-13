@@ -4,7 +4,7 @@
 #include "main.h"
 /**
  */
-void print_char(va_list f)
+int print_char(va_list f)
 {	
 	char a;
 
@@ -13,7 +13,7 @@ void print_char(va_list f)
 }
 /**
 */
-void print_string(va_list s)
+int print_string(va_list s)
 {
 	char *b = va_arg(s, char *);
 	int i = 0;
@@ -23,9 +23,10 @@ void print_string(va_list s)
 }
 /**
  */
-void print_mod(va_list h)
+int print_mod(va_list h)
 {	
 	_putchar('%');
+	return (1);
 }
 int _printf(const char *format, ...)
 {
