@@ -7,7 +7,11 @@
 /**
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 int print_char(va_list l)
+=======
+int print_char(va_list f)
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 =======
 int print_char(va_list f)
 >>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
@@ -21,7 +25,11 @@ int print_char(va_list f)
 /**
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 int print_string(va_list l)
+=======
+int print_string(va_list s)
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 =======
 int print_string(va_list s)
 >>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
@@ -35,6 +43,7 @@ int print_string(va_list s)
 }
 /**
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 int print_mod(va_list l)
 {
@@ -77,10 +86,15 @@ int print_len(va_list l)
 {
 	int 
 =======
+=======
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 int print_mod(va_list h)
 {	
 	_putchar('%');
 	return (1);
+<<<<<<< HEAD
+>>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
+=======
 >>>>>>> 65efb96019e2a64ce5439ff4f8b888e9a68305d8
 }
 int _printf(const char *format, ...)
