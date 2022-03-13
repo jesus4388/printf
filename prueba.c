@@ -64,6 +64,10 @@ int print_decimal(va_list l)
 	free (aux);
 	return (strlen(aux) - 1);
 }
+int print_len(va_list l)
+{
+	int 
+}
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -77,12 +81,12 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_mod},
 		{'d', print_decimal},
+		{'p', print_len},
 		{'\0', NULL}
 
 	};
 
 	va_start (p, format);
-
 	while (format[i] != '\0' && format[i] != '\0')
 	{
 		j = 0;
