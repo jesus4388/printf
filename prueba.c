@@ -4,28 +4,31 @@
 #include "main.h"
 /**
  */
-void print_char(va_list f)
+int print_char(va_list f)
 {	
 	char a;
 
 	a = va_arg(f, int);
 	_putchar (a);
+	return (1);
 }
 /**
 */
-void print_string(va_list s)
+int print_string(va_list s)
 {
 	char *b = va_arg(s, char *);
 	int i = 0;
 
 	for (i = 0; b[i]; i++)
 		_putchar(b[i]);
+	return(i);
 }
 /**
  */
-void print_mod(va_list h)
-{	
-	_putchar('%');
+int print_mod(va_list h)
+{
+	_putchar(37);
+	return (1);
 }
 int _printf(const char *format, ...)
 {
@@ -39,6 +42,7 @@ int _printf(const char *format, ...)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_mod},
+		{
 		{'\0', NULL}
 
 	};
@@ -58,7 +62,7 @@ int _printf(const char *format, ...)
 			i++;
 			while (selector[j].c != '\0')
 			{
-				if (selector[j].c == format[i])
+				if (format[i] == selector[j].c)
 				{
 					selector[j].f(p);
 					i++;
