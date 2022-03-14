@@ -1,19 +1,16 @@
 #include <stdarg.h>
-#include <stddef.h>
 #include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
-#include <string.h>
 /**
- * print_mod - 
- * @l:
- * @c: 
+ * print_mod - print mod
+ * @p: parameters
+ * Return: 1
  */
 int print_mod(va_list p)
 {
-        char c = va_arg(p, int);
-        (void)(c);
+	char c = va_arg(p, int);
+	(void)(c);
 
-        _putchar(37);
-        return (1);
+	_putchar(37);
+	return (1);
 }

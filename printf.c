@@ -2,60 +2,43 @@
 #include <stddef.h>
 #include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
-#include <string.h>
 /**
- * _printf - 
- * @i:
- * @j:
- * @p:
+ * _printf - function printf
+ * @format: parameters
+ * Return: i
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int j = 0;
-
+	int i = 0, j = 0;
 	va_list p;
 
 	op_t selector[] = {
-
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_mod},
-		{'d', print_decimal},
-		{'i', print_integer},
-		{'u', print_unsigned},
-		{'o', print_octal},
-		{'i', print_decimal},
+		{'c', print_char}, {'s', print_string}, {'%', print_mod},
+		{'d', print_decimal}, {'i', print_integer}, {'u', print_unsigned},
+		{'o', print_octal}, {'i', print_decimal},
 		{'\0', NULL}
-
 };
-
-	va_start (p, format);
-
+	va_start(p, format);
 	while (format != NULL && format[i] != '\0')
-{
-	j = 0;
-	if (format[i] != '%')
-	{
-		_putchar (format[i]);
-		i++;
-	}
-
-	else
-	{
-		i++;
-		while(selector[j].c != '\0')
+	{ j = 0;
+		if (format[i] != '%')
 		{
-			if (format[i] == selector[j].c)
+			_putchar (format[i]);
+			i++;
+		}
+		else
+		{ i++;
+			while (selector[j].c != '\0')
 			{
-				selector[j].f(p);
-				i++;
+				if (format[i] == selector[j].c)
+				{
+					selector[j].f(p);
+					i++;
+				}
+				j++;
 			}
-			j++;
 		}
 	}
-}
 va_end(p);
 return (i);
 }

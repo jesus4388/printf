@@ -2,15 +2,15 @@
 #define _PRINTF_H_
 #include <stdarg.h>
 /**
- * struct op - structure for printing various types 
+ * struct op - structure for printing various types
  * @c: char
- * @p: list of data
+ * @f: list of data
 */
 typedef struct op
 {
 	char c;
 	int (*f)(va_list p);
-}op_t;
+} op_t;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
