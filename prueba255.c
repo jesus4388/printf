@@ -6,7 +6,11 @@
 #include <string.h>
 /**
  */
+<<<<<<< HEAD
+void print_char(va_list f)
+=======
 int print_char(va_list l)
+>>>>>>> cb9c75820f75fc4bc0429cb2e5b839292b7993e0
 {	
 	char a = va_arg(l, int);
 
@@ -14,8 +18,13 @@ int print_char(va_list l)
 	return (1);
 }
 /**
+<<<<<<< HEAD
+ */
+void print_string(va_list s)
+=======
 */
 int print_string(va_list l)
+>>>>>>> cb9c75820f75fc4bc0429cb2e5b839292b7993e0
 {
 	char *b = va_arg(l, char *);
 	int i = 0;
@@ -26,7 +35,21 @@ int print_string(va_list l)
 }
 /**
  */
+<<<<<<< HEAD
 int print_mod(va_list p)
+=======
+<<<<<<< HEAD
+int print_mod(char *format, va_list p)
+{
+	(void)format;
+	(void)p;
+	_putchar('%');
+	return (1);
+}
+
+=======
+int print_mod(va_list l)
+>>>>>>> 8dbfdd427cf4497d78673f1e672f6c13409891d9
 {
 	char c = va_arg(p, int);
 	(void)(c);
@@ -70,6 +93,7 @@ int print_decimal(va_list l)
 }
 /**
  */
+<<<<<<< HEAD
 int print_integer(va_list l)
 {
 	int c = va_arg(l, int);
@@ -169,6 +193,9 @@ int print_octal(va_list l)
 	return (strlen(aux) - 1);
 }
 
+=======
+>>>>>>> cb9c75820f75fc4bc0429cb2e5b839292b7993e0
+>>>>>>> 8dbfdd427cf4497d78673f1e672f6c13409891d9
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -182,9 +209,13 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_mod},
 		{'d', print_decimal},
+<<<<<<< HEAD
 		{'i', print_integer},
 		{'u', print_unsigned},
 		{'o', print_octal},
+=======
+		{'i', print_decimal},
+>>>>>>> 8dbfdd427cf4497d78673f1e672f6c13409891d9
 		{'\0', NULL}
 
 	};
@@ -199,6 +230,7 @@ int _printf(const char *format, ...)
 			_putchar (format[i]);
 			i++;
 		}
+
 		else
 		{
 			i++;
