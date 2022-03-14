@@ -6,54 +6,6 @@
 #include <string.h>
 /**
  */
-<<<<<<< HEAD
-void print_char(va_list f)
-=======
-int print_char(va_list l)
->>>>>>> cb9c75820f75fc4bc0429cb2e5b839292b7993e0
-{	
-	char a = va_arg(l, int);
-
-	_putchar (a);
-	return (1);
-}
-/**
-<<<<<<< HEAD
- */
-void print_string(va_list s)
-=======
-*/
-int print_string(va_list l)
->>>>>>> cb9c75820f75fc4bc0429cb2e5b839292b7993e0
-{
-	char *b = va_arg(l, char *);
-	int i = 0;
-
-	for (i = 0; b[i]; i++)
-		_putchar(b[i]);
-	return(i);
-}
-/**
- */
-<<<<<<< HEAD
-int print_mod(char *format, va_list p)
-{
-	(void)format;
-	(void)p;
-	_putchar('%');
-	return (1);
-}
-
-=======
-int print_mod(va_list l)
-{
-	char b = va_arg(l, int);
-
-	_putchar(b);
-	return (1);
-}
-/**
- */
 int print_decimal(va_list l)
 {
 	int c = va_arg(l, int);
@@ -86,7 +38,39 @@ int print_decimal(va_list l)
 }
 /**
  */
->>>>>>> cb9c75820f75fc4bc0429cb2e5b839292b7993e0
+ int print_hexa(char *format, va_list p)
+{
+	int c2 = va_arg (1, int);
+	int j2 = 1;
+	int h2 = 0;
+	char *aux2;
+	h2 = c2
+
+	if (c2 < 0)
+{
+	_putchar ('_');
+	c2 = (c2* - 1);
+}
+	while (h2 / 10)
+{
+	h2 = h / 10;
+	j++;
+}
+	aux2 = malloc(j2);
+	for (j2 = 0; c2 != 0; j++)
+{
+	aux2[j] = c2 % 16;
+	c2 = c2 / 16;
+}
+	for (j2 = (strlen(aux2) - 1); j2 >= 0; j--)
+{
+	_putchar(aux2[j2] + '0');
+}
+{
+	free(aux2);
+	return (strlen(aux2) - 1);
+	}
+}
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -96,11 +80,9 @@ int _printf(const char *format, ...)
 
 	op_t selector[] = {
 
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_mod},
 		{'d', print_decimal},
 		{'i', print_decimal},
+		{'x', print_hexa},
 		{'\0', NULL}
 
 	};
