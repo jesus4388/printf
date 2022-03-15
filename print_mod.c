@@ -8,8 +8,7 @@
  */
 int print_mod(va_list p)
 {
-	char c = va_arg(p, int);
-	(void)(c);
+	(void) p;
 
 	_putchar(37);
 	return (1);
