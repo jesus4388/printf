@@ -9,36 +9,47 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, s = 0, flag  = 1;
 	va_list p;
 
 	op_t selector[] = {
 		{'c', print_char}, {'s', print_string}, {'%', print_mod},
 		{'d', print_decimal}, {'i', print_integer}, {'u', print_unsigned},
-		{'o', print_octal}, {'i', print_decimal},
-		{'\0', NULL}
+		{'i', print_decimal}, {'\0', NULL}
 };
 	va_start(p, format);
-	while (format != NULL && format[i] != '\0')
-	{ j = 0;
-		if (format[i] != '%')
+
+	if (format == NULL)
+		return (-1);
+	for (i = 0; format != NULL && format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
 		{
-			_putchar (format[i]);
+			flag = 1;
+			if (format[i + 1] == '\0')
+				return (-1);
 			i++;
-		}
-		else
-		{ i++;
-			while (selector[j].c != '\0')
+			for (j = 0; selector[j].c != '\0'; j++)
 			{
 				if (format[i] == selector[j].c)
 				{
-					selector[j].f(p);
-					i++;
+					s += selector[j].f(p);
+					flag = 0;
 				}
-				j++;
 			}
 		}
+		else
+		{
+			_putchar(format[i]);
+			s++;
+			flag = 0;
+		}
+		if (flag == 1)
+		{
+			i--;
+			_putchar(37);
+			s++;
+		}
 	}
-va_end(p);
-return (i);
+	return (s);
 }
