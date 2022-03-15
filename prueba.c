@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -115,3 +116,8 @@ int _printf(const char *format, ...)
 	va_end(p);
 	return (i);
 }
+=======
+
+hello
+
+>>>>>>> a6babc3476798997f1f085809957764ad8e9d841
