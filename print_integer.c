@@ -13,7 +13,7 @@ int print_integer(va_list l)
 {
 	int n = va_arg(l, int);
 	int aux;
-	int c = 1; 
+	int c = 1;
 	int j = 1;
 
 	aux = n;
