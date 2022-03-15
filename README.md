@@ -39,8 +39,14 @@ File Descriptions:
 
  printf.c contains the function printf wich uses the prototype int _printf(const char *format, ...);
  _putchar.c contains the function _putchar, which writes a character to stdout.
-
-
+ man_3_printf
+ print_char.c 
+ print_mod.c
+ print_string.c
+ print_decimal.c
+ print_integer.c
+ print_octal.c
+ print_unsigned.c
 
 Authors:
 

@@ -1,30 +1,38 @@
-Manual page
+                                                   Manual page
 
-NAME | SYNOPSIS | DESCRIPTION | RETURN VALUE | ATTRIBUTES | CONFORMING TO | NOTES | BUGS | EXAMPLES | SEE ALSO | COLOPHON
+NAME | SYNOPSIS | DESCRIPTION | RETURN VALUE | COLOPHON
 
-NAME
+NAME:
 	printf
 
-SYNOPSIS 
-	#include <stdio.h>
-	incluir prototipos cuando pueda pull ******
+SYNOPSIS:
+	 #include <stdio.h>
+	 #include <stdarg.h>
+         #include <stddef.h>
+         #include "main.h"
 
-	#include <stdarg.h>
-	incluir prototipos idem arriba ******
+         int _printf(const char *format, ...);
+         int _putchar(char c);
+         int print_char(va_list l);
+         int print_string(va_list l);
+         int print_mod(va_list p);
+         int print_decimal(va_list l);
+         int print_integer(va_list l);
+         int print_unsigned(va_list l);
+         int print_octal(va_list l);
 
-DESCRIPTION
+DESCRIPTION:
             The functions in the printf() family produce output according to a format as described below.
             The functions printf() and write output to stdout.
-            All of these functions write the output under the control of a format string that specifies how subsequent 
-            arguments (or arguments accessed via the variable-length argument facilities of stdarg are converted for 
+            All of these functions write the output under the control of a format string that specifies how subsequent
+            arguments (or arguments accessed via the variable-length argument facilities of stdarg are converted for
             output.
 
-RETURN VALUE
-	    Upon successful return, these functions return the number of characters printed (excluding the null byte 
-            used to end output to strings).
+RETURN VALUE:
+	     Upon successful return, these functions return the number of characters printed (excluding the null byte
+             used to end output to strings).
 
-COLOPHON 
-        This page is part of release of Cohort 17 project print made by Jesús Hernandez and Danielle Serafim.
+COLOPHON:
+         This page is part of release Cohort 17 Holberton School project print made by Jesús Hernandez and Danielle Serafim.
 
                   GNU                            2022-03-15                      PRINTF
-
