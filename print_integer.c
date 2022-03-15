@@ -11,45 +11,49 @@
  */
 int print_integer(va_list l)
 {
-	int c = va_arg(l, int);
-	int j = 1;
+	int aux;
+	int c = 1;
 	int i = 1;
-	int h = 0;
-	char *aux;
 
-	h = c;
+	int n = va_arg(l, int);
 
-	if (c == 0)
+	aux = n;
+	if (n < 0)
 	{
-		_putchar('0');
-		return (1);
+		i = 2;
+		_putchar(45);
+		while (aux <= -10)
+		{
+			aux /= 10;
+			c *= 10;
+			i++;
+		}
+		for (; c >= 1; c /= 10)
+		{
+			_putchar((((n / c) % 10) * -1) + 48);
+		}
 	}
-	if (c < 0)
+	else
 	{
+<<<<<<< HEAD
 		_putchar('-');
 		c = (c * -1);
 <<<<<<< HEAD
 =======
 		i++;
 >>>>>>> 483bbe0050103db2e3915e43a232b8c84a83bf93
+=======
+		while (aux >= 10)
+		{
+			aux /= 10;
+			c *= 10;
+			i++;
+		}
+		for (; c >= 1; c /= 10)
+		{
+			_putchar(((n / c) % 10) + 48);
+		}
+>>>>>>> 3a8520ef5e80031816d840ecff97553ba4781f3f
 	}
-	while (h / 10)
-	{
-		h = h / 10;
-		j++;
-	}
-	aux = malloc(j);
-	for (j = 0; c != 0; j++)
-	{
-		aux[j] = c % 10;
-		c = c / 10;
-	}
-	for (j = (strlen(aux) - 1); j >= 0; j--)
-	{
-		_putchar(aux[j] + '0');
-		i++;
-	}
-	i -= 1;
-	free(aux);
 	return (i);
 }
