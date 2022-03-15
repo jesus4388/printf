@@ -13,22 +13,15 @@ int print_integer(va_list l)
 {
 	int c = va_arg(l, int);
 	int j = 1;
-	int i = 1;
 	int h = 0;
 	char *aux;
 
 	h = c;
 
-	if (c == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 	if (c < 0)
 	{
 		_putchar('-');
 		c = (c * -1);
-		i++;
 	}
 	while (h / 10)
 	{
@@ -44,9 +37,7 @@ int print_integer(va_list l)
 	for (j = (strlen(aux) - 1); j >= 0; j--)
 	{
 		_putchar(aux[j] + '0');
-		i++;
 	}
-	i -= 1;
 	free(aux);
-	return (i);
+	return (strlen(aux) - 1);
 }
