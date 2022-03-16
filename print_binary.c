@@ -9,7 +9,6 @@
  */
 void conver(unsigned int n)
 {
-	int i = 1;
 
 	if (n / 2)
 	{
