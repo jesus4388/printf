@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 		{'c', print_char}, {'s', print_string}, {'%', print_mod},
 		{'d', print_integer}, {'i', print_integer}, {'u', print_unsigned},
 		{'\0', NULL}};
-
 	va_start(p, format);
 	if (format == NULL)
 		return (-1);
@@ -29,8 +28,10 @@ int _printf(const char *format, ...)
 			i++;
 			for (j = 0; selector[j].c != '\0'; j++)
 				if (format[i] == selector[j].c)
+				{
 					s += selector[j].f(p);
 					flag = 0;
+				}
 		}
 		else
 		{
