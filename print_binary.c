@@ -9,7 +9,7 @@
  * @l: strlen
  * Return: 0
  */
-int conver(int n)
+void conver(unsigned int n)
 {
 	int i = 1;
 
@@ -22,12 +22,6 @@ int conver(int n)
 	{
 		_putchar ((n % 2) + 48);
 	}
-	while (n >= 0) 
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
 }
 /**
  * print_binary - print binary
@@ -36,9 +30,15 @@ int conver(int n)
  */
 int print_binary(va_list l)
 {
-	int n = va_arg(l, int);
+	int i = 1;
+	unsigned int n = va_arg(l, unsigned int);
 
 	conver(n);
 
-return (0);
+		while(n / 2)
+		{
+			n = n / 2;
+			i++;
+	}
+	return (i);
 }
