@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	op_t selector[] = {
 		{'c', print_char}, {'s', print_string}, {'%', print_mod},
 		{'d', print_integer}, {'i', print_integer}, {'u', print_unsigned},
-		{'\0', NULL}
+		{'b', print_binary}, {'\0', NULL}
 };
 	va_start(p, format);
 	if (format == NULL)
