@@ -20,5 +20,6 @@ int print_mod(va_list p);
 int print_decimal(va_list l);
 int print_integer(va_list l);
 int print_unsigned(va_list l);
+int print_binary(va_list l);
 
 #endif /*_PRINTF_H */
