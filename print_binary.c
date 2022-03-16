@@ -1,13 +1,11 @@
 #include <stdarg.h>
-#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "main.h"
 /**
- * print_binary - binary
- * @l: strlen
- * Return: 0
+ * conver - binary
+ * @n: va_list
  */
 void conver(unsigned int n)
 {
@@ -34,11 +32,10 @@ int print_binary(va_list l)
 	unsigned int n = va_arg(l, unsigned int);
 
 	conver(n);
-
-		while(n / 2)
+		while (n / 2)
 		{
 			n = n / 2;
 			i++;
-	}
+		}
 	return (i);
 }
